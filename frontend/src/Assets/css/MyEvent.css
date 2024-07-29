@@ -1,0 +1,40 @@
+.my-events {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .my-events h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .my-events table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .my-events th,
+  .my-events td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .my-events th {
+    background-color: #f4f7f6;
+    color: #34495e;
+  }
+  
+  .my-events tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .my-events td {
+    color: #2c3e50;
+  }
+  
