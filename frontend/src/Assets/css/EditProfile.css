@@ -2,8 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 70px;
   }
   
   .edit-profile {
@@ -105,6 +104,10 @@ body {
     align-self: flex-start;
     transition: background-color 0.3s ease-in-out;
   }
+
+#profile-pic-upload {
+  display: none; /* Hide the default file input */
+}
   
   .save-btn:hover {
     background-color: #219150;

@@ -1,18 +1,24 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 import '../Assets/css/Home.css';
-import CarouselComponent from '../components/CarouselComponent'; // Adjust the path as necessary
+import CarouselComponent from '../components/CarouselComponent';
 
 // Import images
 import image2 from '../Assets/Images/image2.jpg';
 import image1 from '../Assets/Images/image1.jpg';
 import cateringImage from '../Assets/Images/catering.jpg';
+import galleryImage1 from '../Assets/Images/hairdo.jpg';
+import galleryImage2 from '../Assets/Images/makeup.jpg';
+import galleryImage3 from '../Assets/Images/mehandi.jpg';
+import galleryImage4 from '../Assets/Images/photography.jpg';
+import galleryImage5 from '../Assets/Images/hall.jpg';
+import galleryImage6 from '../Assets/Images/garland.jpg';
 
 const Home = () => {
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleFeedbackClick = () => {
-    navigate('/contact'); // Navigate to the contact page
+    navigate('/contact');
   };
 
   return (
@@ -44,6 +50,30 @@ const Home = () => {
             <i className="fas fa-utensils"></i>
             <h3>Catering</h3>
             <p>Our catering services ensure that your guests enjoy delicious meals.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="gallery-section">
+        <h2>Gallery</h2>
+        <div className="gallery-container">
+          <div className="gallery-item card">
+            <img src={galleryImage1} alt="Gallery Image 1" />
+          </div>
+          <div className="gallery-item card">
+            <img src={galleryImage2} alt="Gallery Image 2" />
+          </div>
+          <div className="gallery-item card">
+            <img src={galleryImage3} alt="Gallery Image 3" />
+          </div>
+          <div className="gallery-item card">
+            <img src={galleryImage4} alt="Gallery Image 4" />
+          </div>
+          <div className="gallery-item card">
+            <img src={galleryImage5} alt="Gallery Image 5" />
+          </div>
+          <div className="gallery-item card">
+            <img src={galleryImage6} alt="Gallery Image 6" />
           </div>
         </div>
       </section>
