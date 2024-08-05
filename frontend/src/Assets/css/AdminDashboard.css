@@ -1,168 +1,129 @@
-/* AdminDashboard.css */
 .admin-dashboard {
   display: flex;
-  margin: 0;
-  height: calc(100vh - 60px);
-  background: #f5f5f5;
 }
 
-.admin-dashboard .side-panel {
-  width: 250px;
-  background: #333;
+.side-panel {
+  width: 200px;
+  background-color: #f4f4f4;
   padding: 20px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: auto;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.admin-dashboard .profile-section {
+.profile-section {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.admin-dashboard .profile-pic {
-  width: 90px;
-  height: 90px;
+.profile-pic {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #cfd0d1;
-  margin-bottom: 10px;
 }
 
-.admin-dashboard .profile-name {
-  font-size: 20px;
+.profile-name {
   margin: 10px 0 5px;
-  font-weight: 600;
+  font-size: 18px;
 }
 
-.admin-dashboard .profile-role {
+.profile-role {
+  color: #888;
   font-size: 14px;
-  color: #ccc;
 }
 
-.admin-dashboard .side-panel ul {
-  list-style: none;
+.side-panel ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
+  flex-grow: 1;
 }
 
-.admin-dashboard .side-panel ul li {
-  margin: 15px 0;
+.side-panel li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.admin-dashboard .side-panel ul li a {
-  text-decoration: none;
-  color: #f1f1f1;
-  display: block;
-  padding: 12px;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
+.side-panel li:hover {
+  background-color: #ddd;
+}
+
+.logout-section {
+  margin-top: auto;
+  margin-bottom: 70px;
+  margin-right: 130px;
+}
+
+.logout-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-section button:hover {
+  background-color: #e60000;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 22%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
-.admin-dashboard .side-panel ul li a:hover {
-  background: #007bff;
-  color: #fff;
-}
-
-.admin-dashboard .main-content {
-  flex: 1;
-  padding: 20px;
-  margin-left: 300px; /* Adjust margin to account for the side panel width */
-  overflow-y: auto;
-}
-
-.admin-dashboard .cards-container {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.admin-dashboard .card {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  flex: 1;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.admin-dashboard .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.admin-dashboard .card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.admin-dashboard .card-count {
+.card-count {
   font-size: 24px;
-  font-weight: 700;
-  color: #007bff;
-  background: #e7f0ff;
-  padding: 15px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: inline-block;
+  font-weight: bold;
 }
 
-.admin-dashboard h1, .admin-dashboard h2 {
-  color: #333;
+#recent-orders,
+#recent-customers {
   margin-bottom: 20px;
 }
 
-.admin-dashboard #recent-orders table {
+#recent-orders table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
-.admin-dashboard #recent-orders table th,
-.admin-dashboard #recent-orders table td {
-  padding: 12px;
-  border: none;
-  text-align: left;
-  color: #555;
+#recent-orders th,
+#recent-orders td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.admin-dashboard #recent-orders table th {
-  background-color: #f1f1f1;
-  font-weight: 600;
+#recent-orders th {
+  background-color: #f4f4f4;
 }
 
-.admin-dashboard #recent-customers ul {
-  list-style: none;
+#recent-customers ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
-.admin-dashboard #recent-customers ul li {
-  padding: 12px;
+#recent-customers li {
+  padding: 10px 0;
   border-bottom: 1px solid #ddd;
-  color: #555;
-  font-size: 16px;
-}
-
-.admin-dashboard #recent-customers ul li:last-child {
-  border-bottom: none;
-}
-
-.admin-dashboard #recent-customers ul li:hover {
-  background-color: #f1f1f1;
 }

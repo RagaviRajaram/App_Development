@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,4 +28,15 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private List<Payment> payments;
+
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private List<Feedback> feedbacks;
+
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private List<Booking> bookings;
 }

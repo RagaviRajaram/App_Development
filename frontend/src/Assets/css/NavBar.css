@@ -47,7 +47,34 @@ body {
   cursor: pointer;
   margin: 0 20px;
 }
+/* Styles for the cart icon and count */
+.navbar-cart {
+  position: relative;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
 
+.cart-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .search-input {
   padding: 20px;
   border: none;

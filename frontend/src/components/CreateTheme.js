@@ -3,11 +3,13 @@ import '../Assets/css/CreateTheme.css';
 
 const CreateTheme = () => {
   const [theme, setTheme] = useState({
-    image: '',
+    image: null,
     title: '',
     subtitle: '',
     description: ''
   });
+
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,10 +19,32 @@ const CreateTheme = () => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setTheme((prevTheme) => ({
+      ...prevTheme,
+      image: file
+    }));
+    
+    // Create a preview URL for the image
+    if (file) {
+      setImagePreview(URL.createObjectURL(file));
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle theme creation logic here
-    alert('Theme created successfully!');
+    
+    // Log the form data and file details (simulate form submission)
+    console.log('Theme Data:', {
+      image: theme.image,
+      title: theme.title,
+      subtitle: theme.subtitle,
+      description: theme.description
+    });
+
+    // You can handle the file and form data here, e.g., simulate a file upload
+    alert('Theme creation simulated. Check console for data.');
   };
 
   return (
@@ -29,7 +53,12 @@ const CreateTheme = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Image</label>
-          <input type="text" name="image" value={theme.image} onChange={handleChange} />
+          <input type="file" name="image" onChange={handleFileChange} />
+          {imagePreview && (
+            <div className="image-preview">
+              <img src={imagePreview} alt="Image Preview" />
+            </div>
+          )}
         </div>
         <div className="form-group">
           <label>Title</label>

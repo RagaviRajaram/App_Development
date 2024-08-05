@@ -4,27 +4,22 @@ import jakarta.persistence.*;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 @Data
 @Entity
-public class Booking {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String eventName;
-    private String organizerName;
-    private LocalDate date;
-    private LocalTime time;
-    private String venue;
-    private String additionalInfo;
+    private String amount;
+    private String cardNumber;
+    private String cardHolder;
+    private String expiry;
+    private String cvc;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
-
 }

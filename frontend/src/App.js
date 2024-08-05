@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
+import { CartProvider } from './components/CartContext';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
@@ -20,6 +21,7 @@ import Settings from './components/Settings';
 import MyEvent from './components/MyEvent';
 import Payment from './components/Payment';
 import Success from './components/Success';
+import Cart from './components/Cart';
 
 const App = () => {
   const location = useLocation();
@@ -60,6 +62,7 @@ const App = () => {
           <Route path="/my-events" element={<MyEvent />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
       {!hideNavBarFooter && <Footer />}
@@ -68,9 +71,11 @@ const App = () => {
 };
 
 const AppWrapper = () => (
+  <CartProvider>
   <Router>
     <App />
   </Router>
+  </CartProvider>
 );
 
 export default AppWrapper;

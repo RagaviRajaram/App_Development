@@ -1,15 +1,19 @@
+// NavBar.js
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Assets/css/NavBar.css';
 import logo from '../Assets/Images/logo.jpg';
 import searchIcon from '../Assets/Images/search.png';
 import adminIcon from '../Assets/Images/setting.png';
+import cartIcon from '../Assets/Images/calendar.png';
+import { useCart } from './CartContext';
 
 const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const { cart } = useCart();
 
   const toggleSearch = () => {
     setSearchOpen(!searchOpen);
@@ -25,9 +29,7 @@ const NavBar = () => {
 
   const logout = (e) => {
     e.preventDefault();
-    // Perform logout actions, such as clearing tokens or session data
     localStorage.removeItem('authToken');
-    // Redirect to the homepage
     navigate('/');
   };
 
@@ -76,6 +78,12 @@ const NavBar = () => {
               <Link to="/" onClick={logout}>Logout</Link>
             </div>
           )}
+        </div>
+        <div className="navbar-cart">
+          <Link to="/cart">
+            <img src={cartIcon} alt="Cart Icon" className="cart-icon" />
+            {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+          </Link>
         </div>
       </div>
     </nav>
